@@ -19,13 +19,13 @@ export class get_axios<T> {
             }
         } catch (error) {
             if (error instanceof ApiError) {
-                // Manejar el error de acuerdo a tus necesidades
+              
                 console.error("Error en solicitud ID:", id);
                 console.error("Error:", error.status, error.statusText);
                 console.error("Data:", error.data);
                 throw error;
             } else {
-                // Otro tipo de error (por ejemplo, un error de red)
+               
                 console.error("Error inesperado:", error);
                 throw error;
             }

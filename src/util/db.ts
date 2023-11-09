@@ -23,7 +23,7 @@ export class SQLiteDatabase {
     async saveData(data: DataToSave): Promise<void> {
         return new Promise<void>((resolve, reject) => {
             this.db.serialize(() => {
-                // Verificar si el registro ya existe
+         
                 this.db.get(
                     `SELECT COUNT(*) as count FROM ${config.db.db_names.servers} WHERE id = ?`,
                     [data.id],
@@ -32,7 +32,7 @@ export class SQLiteDatabase {
                             reject(err);
                         } else {
                             if (row.count === 0) {
-                                // El registro no existe, insertarlo
+                               
                                 const stmt = this.db.prepare(`INSERT INTO ${config.db.db_names.servers} VALUES (?, ?) `);
                                 stmt.run(data.id, data.link, (err: Error) => {
                                     if (err) {
@@ -43,7 +43,7 @@ export class SQLiteDatabase {
                                     }
                                 });
                             } else {
-                                // El registro ya existe, no se inserta de nuevo
+                             
                                 resolve();
                             }
                         }
