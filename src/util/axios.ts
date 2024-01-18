@@ -12,7 +12,7 @@ export class get_axios<T> {
         try {
             const response: AxiosResponse = await axios.get(`${this.baseURL}/${url}`);
             if (response.status === 200) {
-                const data: T = response.data;
+                const data: any = response.data;
                 return data;
             } else {
                 throw new ApiError(id, response.status, response.statusText, response.data);

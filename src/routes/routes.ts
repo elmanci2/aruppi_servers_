@@ -6,7 +6,7 @@ const rout =  Router()
 rout.get("/" , (req , res) => {
     res.send("hello word")
 })
-rout.get("/get-ink", server_intersection);
+rout.get("/get-link", server_intersection);
 
 
 export default rout

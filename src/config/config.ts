@@ -7,7 +7,8 @@ export const config = {
     port: process.env.PORT || 3000,
   },
   keys:{
-    streamwish: {name:"streamwish" , key:process.env.streamwish_key}
+    streamwish: {name:"streamwish" , key:process.env.streamwish_key},
+    filelions: {name:"filelions" , key:process.env.filelions_key}
   },
 
   db:{
